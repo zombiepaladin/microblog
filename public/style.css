@@ -1,0 +1,49 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: darkblue;
+}
+
+div, fieldset, input {
+  box-sizing: border-box;
+}
+
+.column {
+  width: 500px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 5px 5px 5px gray;
+}
+
+h1 {
+  text-align: center;
+}
+
+#blog > .post {
+  display: block;
+  width: 100%;
+  border: 1px solid gray;
+  box-shadow: 3px 2px 2px lightgray;
+  margin-bottom: 10px;
+  padding: 2px;
+}
+
+fieldset {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #ccc;
+}
+
+textarea {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}

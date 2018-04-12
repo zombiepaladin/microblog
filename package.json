@@ -1,0 +1,27 @@
+{
+  "name": "microblog",
+  "version": "1.0.0",
+  "description": "An example microblog for demonstrating testing.",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zombiepaladin/microblog.git"
+  },
+  "keywords": [
+    "microblog",
+    "testing"
+  ],
+  "author": "Nathan H. Bean",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zombiepaladin/microblog/issues"
+  },
+  "homepage": "https://github.com/zombiepaladin/microblog#readme"
+}
