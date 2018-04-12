@@ -1,34 +1,19 @@
-const fs = require('fs');
-const http = require('http');
+const express = require('express');
 const controller = require('./src/controller');
 
 const PORT = 3000;
 
-const css = fs.readFileSync('public/style.css');
+// Create the express server
+var app = express();
 
+// Add routes for listing and creating posts
+app.get('/', controller.list);
+app.post('/', controller.create);
 
-function handleRequest(req, res) {
-  switch(req.url) {
-    case '/':
-      if(req.method === 'GET') {
-        controller.list(req, res);
-      } else {
-        controller.create(req, res);
-      }
-      break;
-    case '/style.css':
-      res.statusCode = 200;
-      res.setHeader("Content-Type", "text/css");
-      res.end(css);
-      break;
-    default:
-      res.statusCode = 400;
-      res.end("Requested resource not found");
-  }
-}
+// Serve files directly from the public folder
+app.use(express.static('public'));
 
-var server = http.createServer(handleRequest);
-
-server.listen(PORT, function(){
+// Launch the server
+app.listen(PORT, function(){
   console.log("Listening on PORT " + PORT);
 });

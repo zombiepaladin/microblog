@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/zombiepaladin/microblog/issues"
   },
-  "homepage": "https://github.com/zombiepaladin/microblog#readme"
+  "homepage": "https://github.com/zombiepaladin/microblog#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }

@@ -1,3 +1,8 @@
+/** @function renderBlog
+  * Renders the blog HTML
+  * @param {Array} posts - an array of strings
+  * @return {string} the formatted html
+  */
 function renderBlog(posts) {
   return `
     <!doctype html>
@@ -23,6 +28,9 @@ function renderBlog(posts) {
   `
 }
 
+/** @module View
+  * A module for providing the bodies for http responses.
+  */
 module.exports = {
   renderBlog: renderBlog
 }
