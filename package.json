@@ -30,7 +30,7 @@
   "devDependencies": {
     "cheerio": "^1.0.0-rc.2",
     "jest": "^22.4.3",
-    "node-mocks-http": "^1.5.8",
+    "node-mocks-http": "^1.6.7",
     "request": "^2.85.0"
   }
 }

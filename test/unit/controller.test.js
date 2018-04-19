@@ -52,7 +52,7 @@ test('controller.list() should list all posts in the model', function(done) {
 
 });
 
-/*
+
 test('controller.create() should create a new post and add it to the model before serving a list of all posts', function(done) {
   var posts = ["one", "two", "three"];
   const newMessage = "testing...";
@@ -91,9 +91,14 @@ test('controller.create() should create a new post and add it to the model befor
     eventEmitter: require('events').EventEmitter
   });
 
+  res.on('data', function(){
+    console.log("ERROR")
+  })
+
   // Additionally, we need the response to listen for the
   // 'end' event which signifies we've sent our response
   res.on('end', function(){
+    console.log('here');
     // We expect our array of messages to contain our new post
     expect(posts).toContain(newMessage);
     // We expect the JSON string that is the response's body
@@ -106,5 +111,7 @@ test('controller.create() should create a new post and add it to the model befor
 
   // Finally, test the controller.create() method
   controller.create(req, res);
+  // We need to manually emit the events
+  req.emit('data', 'message=testing...')
+  req.emit('end');
 });
-*/

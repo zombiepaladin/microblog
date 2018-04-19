@@ -21,6 +21,10 @@ function list(req, res) {
   */
 function create(req, res) {
   var body = '';
+  req.on('err', function() {
+    res.statusCode = 500;
+    res.end("Server error");
+  });
 
   req.on('data', function(chunk) {
     body += chunk;
