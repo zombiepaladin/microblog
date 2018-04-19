@@ -4,6 +4,9 @@
   * @return {string} the formatted html
   */
 function renderBlog(posts) {
+  const postHTML = posts.map(function(message) {
+    return `<div class="post">${message}</div>`;
+  }).join('');
   return `
     <!doctype html>
     <html>
@@ -14,7 +17,7 @@ function renderBlog(posts) {
       <div class="column">
         <h1>Microblog</h1>
         <div id="blog">
-          ${posts}
+          ${postHTML}
         </div>
         <form id="new-post" method="POST">
           <fieldset>

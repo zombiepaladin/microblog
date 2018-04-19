@@ -12,13 +12,16 @@ function getAllPosts() {
 
 /** @function createPost
   * Creates a new post in our database
+  * if the message is over 255 characters, it WILL NOT BE ADDED!
   * @param {string} message - the message to post
   */
 function createPost(message) {
-  posts.push(message);
+  if(typeof message === 'string' && message.length > 0 && message.length < 255) {
+    posts.push(message);
+  }
 }
 
-/** @module Model 
+/** @module Model
   * Provides functions for storing and retreiving posts
   */
 module.exports = {

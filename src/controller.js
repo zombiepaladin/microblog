@@ -1,6 +1,6 @@
 const querystring = require('querystring');
-const model = require('./model');
-const view = require('./view');
+const model = require('../src/model');
+const view = require('../src/view');
 
 /** @function list
   * Lists all posts in the blog
