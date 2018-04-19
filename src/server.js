@@ -3,6 +3,10 @@ const controller = require('./controller');
 
 var instance;
 
+/** @function start
+  * Launches the webserver on the specified port
+  * @param {integer} port - the port to listen on.
+  */
 function start(port) {
   // Create the express server
   var app = express();
@@ -21,6 +25,9 @@ function start(port) {
 
 }
 
+/** @function stop
+  * Stops the webserver (if running)
+  */
 function stop() {
   if(instance) {
     instance.stop();
@@ -28,6 +35,10 @@ function stop() {
   }
 }
 
+/** @module server
+  * Provides a webserver implementation that can be
+  * started and stopped.
+  */
 module.exports = {
   start: start,
   stop: stop
